@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MNIST Digit Classifier</title>
+
+    <style>
+        body{
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .container{
+            width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        button{
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        h2{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MNIST Digit Classifier</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <input type="file" name="file" required>
+
+        <br><br>
+
+        <button type="submit">Predict</button>
+
+    </form>
+
+    {% if prediction is not none %}
+        <h2>Predicted Digit: {{ prediction }}</h2>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
